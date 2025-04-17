@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:FikraTech/featurs/auth/pages/signup_page.dart';
+import 'package:fikratech/featurs/auth/pages/signup_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
