@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import "package:FikraTech/featurs/auth/pages/login_page.dart";
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -14,7 +14,7 @@ class _SignupPageState extends State<SignupPage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
-  
+
   bool _obscurePassword = true;
   bool _obscureConfirmPassword = true;
 
@@ -30,10 +30,7 @@ class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sign Up'),
-        elevation: 0,
-      ),
+      appBar: AppBar(title: const Text('Sign Up'), elevation: 0),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
@@ -43,28 +40,21 @@ class _SignupPageState extends State<SignupPage> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const SizedBox(height: 20),
-                
+
                 // App logo or icon can go here
-                const Icon(
-                  Icons.account_circle,
-                  size: 80,
-                  color: Colors.blue,
-                ),
-                
+                const Icon(Icons.account_circle, size: 80, color: Colors.blue),
+
                 const SizedBox(height: 24),
-                
+
                 // Welcome text
                 const Text(
                   'Create an Account',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
-                
+
                 const SizedBox(height: 32),
-                
+
                 // Full Name field
                 TextFormField(
                   controller: _nameController,
@@ -80,9 +70,9 @@ class _SignupPageState extends State<SignupPage> {
                     return null;
                   },
                 ),
-                
+
                 const SizedBox(height: 16),
-                
+
                 // Email field
                 TextFormField(
                   controller: _emailController,
@@ -96,15 +86,17 @@ class _SignupPageState extends State<SignupPage> {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your email';
                     }
-                    if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(value)) {
+                    if (!RegExp(
+                      r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
+                    ).hasMatch(value)) {
                       return 'Please enter a valid email';
                     }
                     return null;
                   },
                 ),
-                
+
                 const SizedBox(height: 16),
-                
+
                 // Password field
                 TextFormField(
                   controller: _passwordController,
@@ -114,7 +106,9 @@ class _SignupPageState extends State<SignupPage> {
                     prefixIcon: const Icon(Icons.lock),
                     suffixIcon: IconButton(
                       icon: Icon(
-                        _obscurePassword ? Icons.visibility : Icons.visibility_off,
+                        _obscurePassword
+                            ? Icons.visibility
+                            : Icons.visibility_off,
                       ),
                       onPressed: () {
                         setState(() {
@@ -134,9 +128,9 @@ class _SignupPageState extends State<SignupPage> {
                     return null;
                   },
                 ),
-                
+
                 const SizedBox(height: 16),
-                
+
                 // Confirm Password field
                 TextFormField(
                   controller: _confirmPasswordController,
@@ -146,7 +140,9 @@ class _SignupPageState extends State<SignupPage> {
                     prefixIcon: const Icon(Icons.lock),
                     suffixIcon: IconButton(
                       icon: Icon(
-                        _obscureConfirmPassword ? Icons.visibility : Icons.visibility_off,
+                        _obscureConfirmPassword
+                            ? Icons.visibility
+                            : Icons.visibility_off,
                       ),
                       onPressed: () {
                         setState(() {
@@ -166,9 +162,9 @@ class _SignupPageState extends State<SignupPage> {
                     return null;
                   },
                 ),
-                
+
                 const SizedBox(height: 32),
-                
+
                 // Sign Up Button
                 ElevatedButton(
                   onPressed: () {
@@ -182,14 +178,11 @@ class _SignupPageState extends State<SignupPage> {
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 16),
                   ),
-                  child: const Text(
-                    'SIGN UP',
-                    style: TextStyle(fontSize: 16),
-                  ),
+                  child: const Text('SIGN UP', style: TextStyle(fontSize: 16)),
                 ),
-                
+
                 const SizedBox(height: 16),
-                
+
                 // Login option
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -198,7 +191,10 @@ class _SignupPageState extends State<SignupPage> {
                     TextButton(
                       onPressed: () {
                         // Navigate to login page
-                        Navigator.pop(context);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => LoginPage()),
+                        );
                       },
                       child: const Text('Log In'),
                     ),
