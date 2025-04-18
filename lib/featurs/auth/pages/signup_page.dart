@@ -38,7 +38,7 @@ class _SignupPageState extends State<SignupPage> {
     return Scaffold(
       body: Column(
         children: [
-          const WavyAppBar(),
+          const WavyAppBar(waveTitle: "Sign Up"),
           Expanded(
             child: SingleChildScrollView(
               padding: const EdgeInsets.symmetric(

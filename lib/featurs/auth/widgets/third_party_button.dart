@@ -1,4 +1,4 @@
-import 'package:fikratech/featurs/profile/pages/view_profiel.dart';
+import 'package:fikratech/featurs/userpanel/home_page.dart';
 import 'package:flutter/material.dart';
 
 class ThirdPartyButton extends StatelessWidget {
@@ -16,7 +16,7 @@ class ThirdPartyButton extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const ViewProfile()),
+          MaterialPageRoute(builder: (context) => const HomePage()),
         );
       },
       child: Container(
