@@ -138,9 +138,7 @@ class _ProfileFormState extends State<ProfileForm> {
     final now = DateTime.now();
     final picked = await showDatePicker(
       context: context,
-      initialDate: now.subtract(
-        const Duration(days: 365 * 18),
-      ), // Default to 18 years ago
+      initialDate: now.subtract(const Duration(days: 365 * 18)),
       firstDate: DateTime(1900),
       lastDate: now,
     );
@@ -177,7 +175,7 @@ class _ProfileFormState extends State<ProfileForm> {
         ),
         const SizedBox(height: 8),
         SizedBox(
-          height: 70,
+          height: 60,
           child: TextField(
             controller: controller,
             keyboardType: keyboardType,
@@ -186,7 +184,7 @@ class _ProfileFormState extends State<ProfileForm> {
               hintText: hint,
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: 24,
-                vertical: 22,
+                vertical: 15,
               ),
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
@@ -284,8 +282,8 @@ class _ProfileFormState extends State<ProfileForm> {
               child: IntlPhoneField(
                 decoration: InputDecoration(
                   contentPadding: const EdgeInsets.symmetric(
-                    horizontal: 24,
-                    vertical: 22,
+                    horizontal: 10,
+                    vertical: 15,
                   ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(11.75),
@@ -315,7 +313,7 @@ class _ProfileFormState extends State<ProfileForm> {
             buildLabel("Birth date"),
             const SizedBox(height: 8),
             SizedBox(
-              height: 70,
+              height: 60,
               child: TextField(
                 controller: _birthDateController,
                 readOnly: true,
@@ -324,7 +322,7 @@ class _ProfileFormState extends State<ProfileForm> {
                   hintText: "Select your birth date",
                   contentPadding: const EdgeInsets.symmetric(
                     horizontal: 24,
-                    vertical: 22,
+                    vertical: 15,
                   ),
                   suffixIcon: const Icon(Icons.calendar_today),
                   enabledBorder: OutlineInputBorder(
@@ -356,7 +354,7 @@ class _ProfileFormState extends State<ProfileForm> {
             buildLabel("Gender"),
             const SizedBox(height: 8),
             SizedBox(
-              height: 70,
+              height: 60,
               child: DropdownButtonFormField<String>(
                 value: _selectedGender,
                 items:
@@ -372,7 +370,7 @@ class _ProfileFormState extends State<ProfileForm> {
                 decoration: InputDecoration(
                   contentPadding: const EdgeInsets.symmetric(
                     horizontal: 24,
-                    vertical: 22,
+                    vertical: 15,
                   ),
                   hintText: "Select gender",
                   enabledBorder: OutlineInputBorder(

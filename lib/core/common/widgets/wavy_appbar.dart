@@ -3,44 +3,135 @@ import 'package:flutter/material.dart';
 class WavyAppBar extends StatelessWidget {
   final double height;
   final Color color;
+  final String? title;
+  final String? waveTitle;
+  final bool centerTitle;
+  final Widget? leading;
+  final List<Widget>? actions;
 
   const WavyAppBar({
     super.key,
-    this.height = 240.0,
+    this.height = 250,
     this.color = const Color(0xFF6C63FF),
+    this.title,
+    this.waveTitle,
+    this.centerTitle = true,
+    this.leading,
+    this.actions,
   });
 
   @override
   Widget build(BuildContext context) {
-    return ClipPath(
-      clipper: _WavyClipper(),
-      child: Container(
-        height: height,
-        color: color,
-        child: const SafeArea(
-          child: Padding(
-            padding: EdgeInsets.only(left: 16.0, top: 16.0),
-            child: Align(alignment: Alignment.topLeft),
+    return Stack(
+      children: [
+        ClipPath(
+          clipper: _OriginalWavyClipper(),
+          child: Container(
+            height: height,
+            color: color,
+            child: SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 8),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        leading ?? const SizedBox(width: 24),
+
+                        if (title != null)
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 12.0,
+                              ),
+                              child: Text(
+                                title!,
+                                textAlign:
+                                    centerTitle
+                                        ? TextAlign.center
+                                        : TextAlign.left,
+                                style: const TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          )
+                        else
+                          const Spacer(),
+
+                        if (actions != null)
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children:
+                                actions!
+                                    .map(
+                                      (action) => Padding(
+                                        padding: const EdgeInsets.only(
+                                          left: 12.0,
+                                        ),
+                                        child: action,
+                                      ),
+                                    )
+                                    .toList(),
+                          )
+                        else
+                          const SizedBox(width: 24),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
         ),
-      ),
+
+        if (waveTitle != null)
+          Positioned(
+            bottom: 20,
+            left: 0,
+            right: 0,
+            child: Padding(
+              padding: EdgeInsets.only(
+                left: centerTitle ? 0 : 24.0,
+                right: 24.0,
+              ),
+              child: Text(
+                waveTitle!,
+                textAlign: centerTitle ? TextAlign.center : TextAlign.left,
+                style: TextStyle(
+                  fontSize: 22,
+                  color: Theme.of(context).colorScheme.primary,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+      ],
     );
   }
 }
 
-class _WavyClipper extends CustomClipper<Path> {
+class _OriginalWavyClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     final path = Path();
     path.lineTo(0, 0);
     path.lineTo(size.width, 0);
-    path.lineTo(size.width, size.height - 50);
+    path.lineTo(size.width, size.height - 100);
 
-    final firstControlPoint = Offset(size.width * 0.75, size.height);
-    final firstEndPoint = Offset(size.width * 0.5, size.height - 60);
+    final firstControlPoint = Offset(size.width, size.height);
+    final firstEndPoint = Offset(size.width * 0.6, size.height - 60);
 
     final secondControlPoint = Offset(size.width * 0.25, size.height - 120);
-    final secondEndPoint = Offset(0, size.height - 20);
+    final secondEndPoint = Offset(0, size.height);
 
     path.quadraticBezierTo(
       firstControlPoint.dx,

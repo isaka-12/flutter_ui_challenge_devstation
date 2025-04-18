@@ -1,8 +1,15 @@
 import 'package:fikratech/core/theme/theme.dart';
 import 'package:fikratech/featurs/auth/pages/splash_screen.dart';
 import 'package:fikratech/featurs/auth/pages/signup_page.dart';
+import 'package:fikratech/featurs/profile/pages/downloads.dart';
+import 'package:fikratech/featurs/profile/pages/invite_friends.dart';
+import 'package:fikratech/featurs/profile/pages/languages.dart';
+import 'package:fikratech/featurs/profile/pages/notifications.dart';
 import 'package:fikratech/featurs/profile/pages/profile.dart';
+import 'package:fikratech/featurs/profile/pages/security.dart';
+import 'package:fikratech/featurs/profile/pages/settings.dart';
 import 'package:fikratech/featurs/profile/pages/view_profiel.dart';
+import 'package:fikratech/featurs/profile/pages/favourites.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -33,6 +40,13 @@ class MyApp extends StatelessWidget {
             '/signup': (context) => const SignupPage(),
             '/profile': (context) => const Profile(),
             '/view-profile': (context) => const ViewProfile(),
+            '/languages': (context) => const Languages(),
+            '/downloads': (context) => const Downloads(),
+            '/favourites': (context) => const Favourites(),
+            '/invite-friends': (context) => const InviteFriends(),
+            '/notifications': (context) => const Notifications(),
+            '/security': (context) => const Security(),
+            '/settings': (context) => const Settings(),
           },
         );
       },

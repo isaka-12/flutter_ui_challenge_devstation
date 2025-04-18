@@ -147,11 +147,9 @@ class _ViewProfileState extends State<ViewProfile> {
               child: Nav(
                 isStart: false,
                 title: 'My Profile',
-                startIcon: Icons.chevron_left,
+                startIcon: Icons.menu,
                 icon: Icons.settings_outlined,
-                onStartIconTap: () {
-                  Navigator.pop(context);
-                },
+                onStartIconTap: () {},
                 isLast: false,
               ),
             ),
@@ -266,7 +264,7 @@ class MainContent extends StatelessWidget {
           icon: Icons.download_outlined,
           title: 'Downloads',
           onTap: () {
-            Navigator.pushNamed(context, '/profile');
+            Navigator.pushNamed(context, '/downloads');
           },
         ),
 
@@ -277,7 +275,7 @@ class MainContent extends StatelessWidget {
           icon: Icons.language_outlined,
           title: 'Languages',
           onTap: () {
-            Navigator.pushNamed(context, '/profile');
+            Navigator.pushNamed(context, '/languages');
           },
         ),
 
@@ -286,7 +284,7 @@ class MainContent extends StatelessWidget {
           icon: Icons.location_on_outlined,
           title: 'Location',
           onTap: () {
-            Navigator.pushNamed(context, '/profile');
+            Navigator.pushNamed(context, '/location');
           },
         ),
 
@@ -297,7 +295,7 @@ class MainContent extends StatelessWidget {
           icon: Icons.notifications_outlined,
           title: 'Notification',
           onTap: () {
-            Navigator.pushNamed(context, '/profile');
+            Navigator.pushNamed(context, '/notifications');
           },
         ),
 
@@ -306,7 +304,7 @@ class MainContent extends StatelessWidget {
           icon: Icons.subscriptions_outlined,
           title: 'Subscription',
           onTap: () {
-            Navigator.pushNamed(context, '/profile');
+            Navigator.pushNamed(context, '/subscription');
           },
         ),
 
@@ -315,7 +313,7 @@ class MainContent extends StatelessWidget {
           icon: Icons.people_outline,
           title: 'Invite Friends',
           onTap: () {
-            Navigator.pushNamed(context, '/profile');
+            Navigator.pushNamed(context, '/invite-friends');
           },
         ),
 
@@ -326,7 +324,7 @@ class MainContent extends StatelessWidget {
           icon: Icons.delete_outlined,
           title: 'Clear Cache',
           onTap: () {
-            Navigator.pushNamed(context, '/profile');
+            Navigator.pushNamed(context, '/clear-cache');
           },
         ),
 
@@ -335,7 +333,7 @@ class MainContent extends StatelessWidget {
           icon: Icons.history_outlined,
           title: 'Clear History',
           onTap: () {
-            Navigator.pushNamed(context, '/login');
+            Navigator.pushNamed(context, '/clear-history');
           },
         ),
 
