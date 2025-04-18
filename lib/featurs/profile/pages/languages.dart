@@ -15,11 +15,21 @@ class Languages extends StatelessWidget {
               children: [
                 const WavyAppBar(),
                 Container(
-                  padding: const EdgeInsets.only(left: 16, right: 16),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [const SizedBox(width: 24)],
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Languages',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      const LanguageList(),
+                    ],
                   ),
                 ),
               ],
@@ -30,7 +40,7 @@ class Languages extends StatelessWidget {
             left: 0,
             right: 0,
             child: Container(
-              color: Color(0xFF6C63FF),
+              color: const Color(0xFF6C63FF),
               padding: const EdgeInsets.fromLTRB(16, 70, 16, 16),
               child: Nav(
                 isStart: false,
@@ -46,6 +56,81 @@ class Languages extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class LanguageList extends StatefulWidget {
+  const LanguageList({super.key});
+
+  @override
+  State<LanguageList> createState() => _LanguageListState();
+}
+
+class _LanguageListState extends State<LanguageList> {
+  String selectedLanguage = 'English';
+
+  final List<Map<String, String>> languages = [
+    {'title': 'English', 'subtitle': 'United States'},
+    {'title': 'Español', 'subtitle': 'España'},
+    {'title': 'Français', 'subtitle': 'France'},
+    {'title': 'Deutsch', 'subtitle': 'Deutschland'},
+    {'title': '中文 ', 'subtitle': '中国'},
+    {'title': '日本語', 'subtitle': '日本'},
+    {'title': 'Русский', 'subtitle': 'Россия'},
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children:
+          languages.map((lang) {
+            final isSelected = lang['title'] == selectedLanguage;
+            return InkWell(
+              onTap: () {
+                setState(() {
+                  selectedLanguage = lang['title']!;
+                });
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                child: Row(
+                  children: [
+                    const Icon(Icons.language, color: Colors.black),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            lang['title']!,
+                            style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          Text(
+                            lang['subtitle']!,
+                            style: const TextStyle(
+                              fontSize: 13,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Icon(
+                      isSelected
+                          ? Icons.check_circle
+                          : Icons.radio_button_unchecked,
+                      color: isSelected ? const Color(0xFF6C63FF) : Colors.grey,
+                      size: 26,
+                    ),
+                  ],
+                ),
+              ),
+            );
+          }).toList(),
     );
   }
 }
