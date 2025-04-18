@@ -1,8 +1,12 @@
-import 'package:fikratech/featurs/profile/pages/settings.dart';
+import 'package:fikratech/featurs/userpanel/home_page.dart';
 import 'package:flutter/material.dart';
 
 class ThirdPartyButton extends StatelessWidget {
-  const ThirdPartyButton({super.key, required this.fieldname, required this.imagePath});
+  const ThirdPartyButton({
+    super.key,
+    required this.fieldname,
+    required this.imagePath,
+  });
   final String fieldname;
   final String imagePath;
 
@@ -12,7 +16,7 @@ class ThirdPartyButton extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const Settings()),
+          MaterialPageRoute(builder: (context) => const HomePage()),
         );
       },
       child: Container(

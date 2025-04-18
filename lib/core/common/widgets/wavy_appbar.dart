@@ -76,7 +76,7 @@ class WavyAppBar extends StatelessWidget {
                                     .map(
                                       (action) => Padding(
                                         padding: const EdgeInsets.only(
-                                          left: 12.0,
+                                          left: 0.0,
                                         ),
                                         child: action,
                                       ),

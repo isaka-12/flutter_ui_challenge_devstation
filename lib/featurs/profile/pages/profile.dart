@@ -13,7 +13,9 @@ class Profile extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          const WavyAppBar(),
+          const WavyAppBar(
+            title: 'Profile',
+          ),
           SingleChildScrollView(
             padding: const EdgeInsets.only(top: 200),
             child: Column(
