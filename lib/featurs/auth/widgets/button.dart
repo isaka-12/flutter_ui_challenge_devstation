@@ -1,3 +1,4 @@
+import 'package:fikratech/featurs/profile/pages/settings.dart';
 import 'package:flutter/material.dart';
 
 class CustomActionButton extends StatelessWidget {
@@ -6,7 +7,7 @@ class CustomActionButton extends StatelessWidget {
     super.key,
     required this.formKey,
     required this.buttonname,
-    required this.onPressed,
+    required this.onPressed, 
   });
   final String buttonname;
   final VoidCallback onPressed;
@@ -14,6 +15,8 @@ class CustomActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
+      height: 50,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.centerLeft,
@@ -30,11 +33,12 @@ class CustomActionButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
-          padding: const EdgeInsets.symmetric(vertical: 16),
+          padding: const EdgeInsets.symmetric(vertical: 4),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
+          spacing: 8,
           children: [
             Text(
               buttonname,
@@ -43,7 +47,7 @@ class CustomActionButton extends StatelessWidget {
                 color: Colors.white, // You can use colorScheme.onPrimary too
               ),
             ),
-            const SizedBox(width: 8),
+
             const Icon(Icons.arrow_forward, color: Colors.white, size: 24),
           ],
         ),

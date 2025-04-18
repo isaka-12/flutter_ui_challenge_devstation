@@ -3,6 +3,7 @@ import 'package:fikratech/featurs/auth/pages/splash_screen.dart';
 import 'package:fikratech/featurs/auth/pages/signup_page.dart';
 import 'package:fikratech/featurs/profile/pages/profile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 final ValueNotifier<ThemeMode> themeNotifier = ValueNotifier(ThemeMode.system);
 void main() {
@@ -12,14 +13,15 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
+    );
     return ValueListenableBuilder<ThemeMode>(
       valueListenable: themeNotifier,
-      builder: (context, currentMode, _) {
+      builder: (_, ThemeMode currentMode, __) {
         return MaterialApp(
-          title: 'Dynamic Theme App',
           theme: lightTheme,
           darkTheme: darkTheme,
           themeMode: currentMode,

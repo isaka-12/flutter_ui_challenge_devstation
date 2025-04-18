@@ -7,6 +7,8 @@ final ThemeData lightTheme = ThemeData(
     primary:  Color(0xFF6C63FF),// Primary action color
     secondary: Color(0xFF2DD4BF),     // Accent or highlight
     onPrimary: Colors.white,   // Text color on primary
+    error: Color(0xFFB00020), // Error color
+    onError: Colors.white,     // Text color on error
     
   ),
   scaffoldBackgroundColor: Colors.white,
@@ -23,6 +25,8 @@ final ThemeData darkTheme = ThemeData(
     primary: Colors.tealAccent,      // Primary action color
     secondary: Colors.deepOrange,    // Accent or highlight
     onPrimary: Colors.white,         // Text color on primary
+    error: Color(0xFFB00020),        // Error color
+    onError: Colors.white,           // Text color on error
     
   ),
   scaffoldBackgroundColor: Color(0xFF121212),
