@@ -118,7 +118,7 @@ class _SignupPageState extends State<SignupPage> {
                       buttonname: 'Sign Up',
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-                          Navigator.pushNamed(context, '/profile');
+                          Navigator.pushNamed(context, '/view-profile');
                         }
                       },
                     ),

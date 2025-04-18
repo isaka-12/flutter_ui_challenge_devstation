@@ -13,17 +13,16 @@ class Profile extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          const WavyAppBar(),
           SingleChildScrollView(
-            padding: const EdgeInsets.only(top: 200),
             child: Column(
               children: [
+                const WavyAppBar(),
                 Stack(
                   alignment: Alignment.topCenter,
                   clipBehavior: Clip.none,
                   children: [
                     Container(
-                      margin: const EdgeInsets.only(top: 28, bottom: 24),
+                      margin: const EdgeInsets.only(top: 40, bottom: 24),
                       decoration: BoxDecoration(
                         color: isDarkMode ? Colors.blueGrey[800] : Colors.white,
                         boxShadow: [
@@ -65,7 +64,7 @@ class Profile extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                      top: -48,
+                      top: -30,
                       child: CircleAvatar(
                         radius: 70,
                         backgroundColor: const Color(0xFF6C63FF),
