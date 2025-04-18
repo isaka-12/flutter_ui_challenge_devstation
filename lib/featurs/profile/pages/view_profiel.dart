@@ -147,9 +147,11 @@ class _ViewProfileState extends State<ViewProfile> {
               child: Nav(
                 isStart: false,
                 title: 'My Profile',
-                startIcon: Icons.menu,
+                startIcon: Icons.home,
                 icon: Icons.settings_outlined,
-                onStartIconTap: () {},
+                onStartIconTap: () {
+                  Navigator.pushNamed(context, '/home');
+                },
                 isLast: false,
               ),
             ),

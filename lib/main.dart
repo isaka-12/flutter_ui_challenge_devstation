@@ -10,8 +10,10 @@ import 'package:fikratech/featurs/profile/pages/security.dart';
 import 'package:fikratech/featurs/profile/pages/settings.dart';
 import 'package:fikratech/featurs/profile/pages/view_profiel.dart';
 import 'package:fikratech/featurs/profile/pages/favourites.dart';
+import 'package:fikratech/featurs/userpanel/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fikratech/featurs/profile/pages/locations.dart';
 
 final ValueNotifier<ThemeMode> themeNotifier = ValueNotifier(ThemeMode.system);
 void main() {
@@ -37,6 +39,7 @@ class MyApp extends StatelessWidget {
           initialRoute: '/',
           routes: {
             '/': (context) => const SplashScreen(),
+            '/home': (context) => const HomePage(),
             '/signup': (context) => const SignupPage(),
             '/profile': (context) => const Profile(),
             '/view-profile': (context) => const ViewProfile(),
@@ -47,6 +50,7 @@ class MyApp extends StatelessWidget {
             '/notifications': (context) => const Notifications(),
             '/security': (context) => const Security(),
             '/settings': (context) => const Settings(),
+            '/location': (context) => const Locations(),
           },
         );
       },

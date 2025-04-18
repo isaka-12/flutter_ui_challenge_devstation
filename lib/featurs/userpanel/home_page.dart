@@ -37,7 +37,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    bool isDarkMode = themeNotifier.value == ThemeMode.dark;
     return Scaffold(
       body: Column(
         children: [
@@ -45,34 +44,19 @@ class _HomePageState extends State<HomePage> {
             title: "Track",
             centerTitle: false,
             leading: IconButton(
-              icon: Icon(Icons.menu, color: Colors.white),
-              onPressed: null,
+              icon: Icon(Icons.person, color: Colors.white),
+              onPressed: () {
+                Navigator.pushNamed(context, '/view-profile');
+              },
             ),
             actions: [
               IconButton(
                 icon: Icon(Icons.notifications, color: Colors.white),
                 onPressed: null,
               ),
-              // Switch(
-              //   value: isDarkMode,
-              //   onChanged: (value) {
-              //     themeNotifier.value =
-              //         value ? ThemeMode.dark : ThemeMode.light;
-              //   },
-              // ),
-              //clickable icon
-              IconButton(
-                icon: Icon(Icons.dark_mode, color: Colors.white),
-                onPressed: () {
-                  themeNotifier.value =
-                      isDarkMode ? ThemeMode.light : ThemeMode.dark;
-                },
-              ),
               IconButton(
                 icon: Icon(Icons.settings, color: Colors.white),
-                onPressed: () {
-                  // Handle settings action
-                },
+                onPressed: () {},
               ),
             ],
           ),

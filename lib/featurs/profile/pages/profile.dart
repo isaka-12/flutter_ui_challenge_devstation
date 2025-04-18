@@ -14,10 +14,10 @@ class Profile extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          const WavyAppBar(title: 'Profile'),
           SingleChildScrollView(
             child: Column(
               children: [
+                const WavyAppBar(),
                 Stack(
                   alignment: Alignment.topCenter,
                   clipBehavior: Clip.none,
