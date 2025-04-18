@@ -3,7 +3,7 @@ import 'package:fikratech/featurs/auth/widgets/button.dart';
 import 'package:fikratech/featurs/auth/widgets/email_field.dart';
 import 'package:fikratech/featurs/auth/widgets/password_field.dart';
 import 'package:fikratech/featurs/auth/widgets/third_party_button.dart';
-import 'package:fikratech/featurs/profile/pages/view_profiel.dart';
+import 'package:fikratech/featurs/userpanel/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:fikratech/core/common/widgets/wavy_appbar.dart';
 
@@ -72,7 +72,7 @@ class _SigninPageState extends State<SigninPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const ViewProfile(),
+                              builder: (context) => const HomePage(),
                             ),
                           );
                         }
