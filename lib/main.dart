@@ -1,5 +1,6 @@
 import 'package:fikratech/core/theme/theme.dart';
 import 'package:fikratech/featurs/auth/pages/splash_screen.dart';
+import 'package:fikratech/featurs/auth/pages/signin_page.dart';
 import 'package:fikratech/featurs/auth/pages/signup_page.dart';
 import 'package:fikratech/featurs/profile/pages/downloads.dart';
 import 'package:fikratech/featurs/profile/pages/invite_friends.dart';
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
             '/': (context) => const SplashScreen(),
             '/home': (context) => const HomePage(),
             '/signup': (context) => const SignupPage(),
+            '/login': (context) => const SigninPage(),
             '/profile': (context) => const Profile(),
             '/view-profile': (context) => const ViewProfile(),
             '/languages': (context) => const Languages(),

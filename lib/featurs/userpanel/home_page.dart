@@ -1,5 +1,4 @@
 import 'package:fikratech/core/common/widgets/wavy_appbar.dart';
-import 'package:fikratech/main.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -52,11 +51,15 @@ class _HomePageState extends State<HomePage> {
             actions: [
               IconButton(
                 icon: Icon(Icons.notifications, color: Colors.white),
-                onPressed: null,
+                onPressed: () {
+                  Navigator.pushNamed(context, '/notifications');
+                },
               ),
               IconButton(
                 icon: Icon(Icons.settings, color: Colors.white),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/settings');
+                },
               ),
             ],
           ),

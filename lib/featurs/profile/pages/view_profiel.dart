@@ -177,7 +177,6 @@ class MainContent extends StatelessWidget {
     required IconData icon,
     required String title,
     required Function() onTap,
-    Color? iconColor,
   }) {
     return InkWell(
       onTap: onTap,
@@ -359,7 +358,7 @@ class MainContent extends StatelessWidget {
                       TextButton(
                         onPressed: () {
                           Navigator.of(context).pop();
-                          Navigator.of(context).pushReplacementNamed('/login');
+                          Navigator.of(context).pushReplacementNamed('/');
                         },
                         child: const Text(
                           'Log Out',
