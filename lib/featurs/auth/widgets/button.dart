@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 
 class CustomActionButton extends StatelessWidget {
   final GlobalKey<FormState> formKey;
-  const CustomActionButton({super.key, required this.formKey, required this.buttonname});
+  const CustomActionButton({
+    super.key,
+    required this.formKey,
+    required this.buttonname,
+    required this.onPressed,
+  });
   final String buttonname;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +26,7 @@ class CustomActionButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       child: ElevatedButton(
-        onPressed: () {
-          if (formKey.currentState!.validate()) {
-            // Handle signup
-          }
-        },
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
@@ -34,7 +36,7 @@ class CustomActionButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-           Text(
+            Text(
               buttonname,
               style: TextStyle(
                 fontSize: 16,

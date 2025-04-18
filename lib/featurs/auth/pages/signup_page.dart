@@ -18,7 +18,7 @@ class _SignupPageState extends State<SignupPage> {
   final _confirmPasswordController = TextEditingController();
 
   bool _obscurePassword = true;
-  bool _obscureConfirmPassword = true;
+  // final bool _obscureConfirmPassword = true;
 
   @override
   void dispose() {
@@ -116,6 +116,11 @@ class _SignupPageState extends State<SignupPage> {
                     CustomActionButton(
                       formKey: _formKey,
                       buttonname: 'Sign Up',
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          Navigator.pushNamed(context, '/profile');
+                        }
+                      },
                     ),
 
                     const SizedBox(height: 16),

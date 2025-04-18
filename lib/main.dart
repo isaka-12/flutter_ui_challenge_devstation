@@ -1,5 +1,7 @@
 import 'package:fikratech/core/theme/theme.dart';
 import 'package:fikratech/featurs/auth/pages/splash_screen.dart';
+import 'package:fikratech/featurs/auth/pages/signup_page.dart';
+import 'package:fikratech/featurs/profile/pages/profile.dart';
 import 'package:flutter/material.dart';
 
 final ValueNotifier<ThemeMode> themeNotifier = ValueNotifier(ThemeMode.system);
@@ -22,7 +24,12 @@ class MyApp extends StatelessWidget {
           darkTheme: darkTheme,
           themeMode: currentMode,
           debugShowCheckedModeBanner: false,
-          home: const SplashScreen(), // Replace with your initial screen
+          initialRoute: '/',
+          routes: {
+            '/': (context) => const SplashScreen(),
+            '/signup': (context) => const SignupPage(),
+            '/profile': (context) => const Profile(),
+          },
         );
       },
     );
