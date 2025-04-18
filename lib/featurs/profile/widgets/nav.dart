@@ -5,6 +5,7 @@ class Nav extends StatelessWidget {
   final IconData icon;
   final IconData startIcon;
   final VoidCallback onStartIconTap;
+  final VoidCallback onIconTap;
   final bool isLast;
   final bool isStart;
 
@@ -14,6 +15,7 @@ class Nav extends StatelessWidget {
     required this.startIcon,
     required this.icon,
     required this.onStartIconTap,
+    required this.onIconTap,
     required this.isLast,
     required this.isStart,
   });
@@ -39,7 +41,7 @@ class Nav extends StatelessWidget {
         ),
         if (!isLast)
           IconButton(
-            onPressed: () {},
+            onPressed: onIconTap,
             icon: Icon(icon, size: 24, color: Colors.white),
           ),
       ],

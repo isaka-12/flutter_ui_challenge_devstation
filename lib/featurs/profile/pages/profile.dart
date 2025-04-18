@@ -95,7 +95,10 @@ class Profile extends StatelessWidget {
                 isStart: false,
                 title: 'My Profile',
                 startIcon: Icons.chevron_left,
-                icon: Icons.settings_outlined,
+                onIconTap: () {
+                  Navigator.pushNamed(context, '/notifications');
+                },
+                icon: Icons.notifications_outlined,
                 onStartIconTap: () {
                   Navigator.pop(context);
                 },

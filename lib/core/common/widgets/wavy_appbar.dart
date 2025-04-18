@@ -31,37 +31,30 @@ class WavyAppBar extends StatelessWidget {
             color: color,
             child: SafeArea(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                padding: const EdgeInsets.symmetric(horizontal: 1.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 8),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        leading ?? const SizedBox(width: 24),
-
+                        leading ?? const SizedBox(width: 10),
                         if (title != null)
                           Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 12.0,
+                            child: Text(
+                              title!,
+                              textAlign:
+                                  centerTitle
+                                      ? TextAlign.center
+                                      : TextAlign.left,
+                              style: const TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
                               ),
-                              child: Text(
-                                title!,
-                                textAlign:
-                                    centerTitle
-                                        ? TextAlign.center
-                                        : TextAlign.left,
-                                style: const TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
                             ),
                           )
                         else
@@ -83,7 +76,7 @@ class WavyAppBar extends StatelessWidget {
                                     .toList(),
                           )
                         else
-                          const SizedBox(width: 24),
+                          const SizedBox(width: 10),
                       ],
                     ),
                   ],
@@ -100,8 +93,8 @@ class WavyAppBar extends StatelessWidget {
             right: 0,
             child: Padding(
               padding: EdgeInsets.only(
-                left: centerTitle ? 0 : 24.0,
-                right: 24.0,
+                left: centerTitle ? 0 : 10.0,
+                right: 10.0,
               ),
               child: Text(
                 waveTitle!,

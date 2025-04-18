@@ -46,7 +46,10 @@ class Notifications extends StatelessWidget {
                 isStart: false,
                 title: 'Notifications',
                 startIcon: Icons.chevron_left,
-                icon: Icons.settings_outlined,
+                onIconTap: () {
+                  Navigator.pushNamed(context, '/home');
+                },
+                icon: Icons.home,
                 onStartIconTap: () {
                   Navigator.pop(context);
                 },

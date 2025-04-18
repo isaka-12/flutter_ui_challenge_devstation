@@ -36,7 +36,10 @@ class InviteFriends extends StatelessWidget {
                 isStart: false,
                 title: 'InviteFriends',
                 startIcon: Icons.chevron_left,
-                icon: Icons.settings_outlined,
+                icon: Icons.notifications_outlined,
+                onIconTap: () {
+                  Navigator.pushNamed(context, '/notifications');
+                },
                 onStartIconTap: () {
                   Navigator.pop(context);
                 },

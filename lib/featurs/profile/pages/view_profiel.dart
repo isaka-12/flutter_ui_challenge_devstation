@@ -148,7 +148,10 @@ class _ViewProfileState extends State<ViewProfile> {
                 isStart: false,
                 title: 'My Profile',
                 startIcon: Icons.home,
-                icon: Icons.settings_outlined,
+                icon: Icons.notifications_outlined,
+                onIconTap: () {
+                  Navigator.pushNamed(context, '/notifications');
+                },
                 onStartIconTap: () {
                   Navigator.pushNamed(context, '/home');
                 },
@@ -302,10 +305,10 @@ class MainContent extends StatelessWidget {
 
         _buildProfileMenuItem(
           context: context,
-          icon: Icons.subscriptions_outlined,
-          title: 'Subscription',
+          icon: Icons.security_outlined,
+          title: 'Security',
           onTap: () {
-            Navigator.pushNamed(context, '/subscription');
+            Navigator.pushNamed(context, '/security');
           },
         ),
 

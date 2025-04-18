@@ -40,25 +40,31 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           WavyAppBar(
-            title: "Track",
+            title: "Fikra",
             centerTitle: false,
-            leading: IconButton(
-              icon: Icon(Icons.person, color: Colors.white),
-              onPressed: () {
-                Navigator.pushNamed(context, '/view-profile');
-              },
+            leading: CircleAvatar(
+              radius: 48,
+              backgroundColor: const Color(0xFF6C63FF),
+              child: ClipOval(
+                child: Image.asset(
+                  'assets/images/fikra.jpg',
+                  fit: BoxFit.cover,
+                  width: 48,
+                  height: 48,
+                ),
+              ),
             ),
             actions: [
               IconButton(
-                icon: Icon(Icons.notifications, color: Colors.white),
+                icon: const Icon(Icons.notifications, color: Colors.white),
                 onPressed: () {
                   Navigator.pushNamed(context, '/notifications');
                 },
               ),
               IconButton(
-                icon: Icon(Icons.settings, color: Colors.white),
+                icon: const Icon(Icons.person, color: Colors.white),
                 onPressed: () {
-                  Navigator.pushNamed(context, '/settings');
+                  Navigator.pushNamed(context, '/view-profile');
                 },
               ),
             ],
@@ -73,20 +79,22 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildFiltersSection() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
             'User Management',
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.black,
+              fontWeight: FontWeight.w600,
+            ),
           ),
-          const SizedBox(height: 8),
-          //search area with icon
+          const SizedBox(height: 12),
           TextField(
             decoration: InputDecoration(
               hintText: 'Search',
-              hintStyle: const TextStyle(fontSize: 14, color: Colors.grey),
               prefixIcon: const Icon(Icons.search),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
@@ -97,7 +105,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 12),
           Row(
             children: [
               Expanded(
@@ -121,7 +129,6 @@ class _HomePageState extends State<HomePage> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    contentPadding: const EdgeInsets.symmetric(horizontal: 12),
                   ),
                 ),
               ),
@@ -147,9 +154,22 @@ class _HomePageState extends State<HomePage> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    contentPadding: const EdgeInsets.symmetric(horizontal: 4),
                   ),
                 ),
+              ),
+              const SizedBox(width: 5),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(40, 55),
+                  backgroundColor: const Color(0xFF6C63FF),
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  padding: const EdgeInsets.all(12),
+                ),
+                child: const Icon(Icons.add, size: 24),
               ),
             ],
           ),
@@ -166,70 +186,63 @@ class _HomePageState extends State<HomePage> {
           final user = _users[index];
           return Card(
             margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-            child: Padding(
-              padding: const EdgeInsets.all(12),
-              child: Row(
+            elevation: 2,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: ListTile(
+              contentPadding: const EdgeInsets.all(16),
+              leading: const CircleAvatar(
+                radius: 28,
+                child: Icon(Icons.person, size: 28),
+              ),
+              title: Text(
+                user['name'],
+                style: const TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 16,
+                ),
+              ),
+              subtitle: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(width: 8),
-                  const CircleAvatar(
-                    radius: 30,
-                    child: Icon(Icons.person, size: 30),
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          user['name'],
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          user['email'],
-                          style: TextStyle(
-                            color: Colors.grey[600],
-                            fontSize: 14,
-                          ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 12,
-                            vertical: 6,
-                          ),
-                          decoration: BoxDecoration(
-                            color:
-                                user['role'] == 'Admin'
-                                    ? Colors.blue.withOpacity(0.2)
-                                    : Colors.grey.withOpacity(0.2),
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                          child: Text(
-                            user['role'],
-                            style: TextStyle(
-                              color:
-                                  user['role'] == 'Admin'
-                                      ? Colors.blue
-                                      : Colors.grey,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ],
+                  Text(user['email'], style: const TextStyle(fontSize: 14)),
+                  const SizedBox(height: 4),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 4,
                     ),
-                  ),
-                  //the menu icon
-                  IconButton(
-                    icon: const Icon(Icons.more_vert),
-                    onPressed: () {
-                      // Handle menu action
-                    },
+                    decoration: BoxDecoration(
+                      color:
+                          user['role'] == 'Admin'
+                              ? Colors.blue.shade50
+                              : Colors.grey.shade200,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Text(
+                      user['role'],
+                      style: TextStyle(
+                        fontSize: 12,
+                        color:
+                            user['role'] == 'Admin'
+                                ? Colors.blue
+                                : Colors.grey[800],
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
                   ),
                 ],
               ),
+              trailing: IconButton(
+                icon: const Icon(Icons.more_vert),
+                onPressed: () {
+                  // Handle more actions
+                },
+              ),
+              onTap: () {
+                // Optional: Toggle selection or show user details
+              },
             ),
           );
         },
@@ -244,30 +257,32 @@ class _HomePageState extends State<HomePage> {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.3),
-            blurRadius: 10,
-            offset: const Offset(0, -5),
+            color: Colors.grey.withOpacity(0.2),
+            blurRadius: 8,
+            offset: const Offset(0, -2),
           ),
         ],
       ),
       child: Row(
         children: [
           Text(
-            '$_selectedCount Users selected',
-            style: const TextStyle(fontWeight: FontWeight.w500),
+            '$_selectedCount selected',
+            style: const TextStyle(fontWeight: FontWeight.w600),
           ),
           const Spacer(),
           OutlinedButton(
             onPressed: () {
-              // Handle suspend action
+              // Suspend selected
             },
+            style: OutlinedButton.styleFrom(foregroundColor: Colors.red),
             child: const Text('Suspend'),
           ),
-          const SizedBox(width: 16),
+          const SizedBox(width: 12),
           ElevatedButton(
             onPressed: () {
-              // Handle export action
+              // Export selected
             },
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
             child: const Text('Export'),
           ),
         ],

@@ -66,7 +66,10 @@ class Security extends StatelessWidget {
                 isStart: false,
                 title: 'Security',
                 startIcon: Icons.chevron_left,
-                icon: Icons.security_outlined,
+                icon: Icons.notifications_outlined,
+                onIconTap: () {
+                  Navigator.pushNamed(context, '/notifications');
+                },
                 onStartIconTap: () {
                   Navigator.pop(context);
                 },
