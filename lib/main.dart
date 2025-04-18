@@ -15,7 +15,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fikratech/featurs/profile/pages/locations.dart';
 
-final ValueNotifier<ThemeMode> themeNotifier = ValueNotifier(ThemeMode.system);
+final ValueNotifier<ThemeMode> themeNotifier = ValueNotifier(ThemeMode.light);
 void main() {
   runApp(const MyApp());
 }
@@ -33,7 +33,6 @@ class MyApp extends StatelessWidget {
       builder: (_, ThemeMode currentMode, __) {
         return MaterialApp(
           theme: lightTheme,
-          darkTheme: darkTheme,
           themeMode: currentMode,
           debugShowCheckedModeBanner: false,
           initialRoute: '/',

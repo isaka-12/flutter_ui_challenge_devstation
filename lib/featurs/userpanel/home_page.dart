@@ -78,6 +78,13 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _buildFiltersSection() {
+    const borderColor = Color(0xFF6C63FF);
+
+    OutlineInputBorder customBorder = OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12),
+      borderSide: const BorderSide(color: borderColor, width: 1.5),
+    );
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
       child: Column(
@@ -96,9 +103,8 @@ class _HomePageState extends State<HomePage> {
             decoration: InputDecoration(
               hintText: 'Search',
               prefixIcon: const Icon(Icons.search),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
+              enabledBorder: customBorder,
+              focusedBorder: customBorder,
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: 12,
                 vertical: 8,
@@ -126,9 +132,9 @@ class _HomePageState extends State<HomePage> {
                     });
                   },
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
+                    hintText: 'Permission',
+                    enabledBorder: customBorder,
+                    focusedBorder: customBorder,
                   ),
                 ),
               ),
@@ -151,9 +157,9 @@ class _HomePageState extends State<HomePage> {
                     });
                   },
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
+                    hintText: 'Joined',
+                    enabledBorder: customBorder,
+                    focusedBorder: customBorder,
                   ),
                 ),
               ),

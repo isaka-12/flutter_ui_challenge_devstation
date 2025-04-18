@@ -11,7 +11,7 @@ class WavyAppBar extends StatelessWidget {
 
   const WavyAppBar({
     super.key,
-    this.height = 250,
+    this.height = 220,
     this.color = const Color(0xFF6C63FF),
     this.title,
     this.waveTitle,
@@ -31,7 +31,7 @@ class WavyAppBar extends StatelessWidget {
             color: color,
             child: SafeArea(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 1.0),
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -76,7 +76,7 @@ class WavyAppBar extends StatelessWidget {
                                     .toList(),
                           )
                         else
-                          const SizedBox(width: 10),
+                          const SizedBox(width: 24),
                       ],
                     ),
                   ],
@@ -93,8 +93,8 @@ class WavyAppBar extends StatelessWidget {
             right: 0,
             child: Padding(
               padding: EdgeInsets.only(
-                left: centerTitle ? 0 : 10.0,
-                right: 10.0,
+                left: centerTitle ? 0 : 24.0,
+                right: 24.0,
               ),
               child: Text(
                 waveTitle!,
@@ -118,9 +118,9 @@ class _OriginalWavyClipper extends CustomClipper<Path> {
     final path = Path();
     path.lineTo(0, 0);
     path.lineTo(size.width, 0);
-    path.lineTo(size.width, size.height - 100);
+    path.lineTo(size.width, size.height - 60);
 
-    final firstControlPoint = Offset(size.width, size.height);
+    final firstControlPoint = Offset(size.width * 0.95, size.height - 10);
     final firstEndPoint = Offset(size.width * 0.6, size.height - 60);
 
     final secondControlPoint = Offset(size.width * 0.25, size.height - 120);

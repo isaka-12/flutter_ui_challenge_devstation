@@ -213,40 +213,6 @@ class MainContent extends StatelessWidget {
     );
   }
 
-  Widget _buildDarkModeToggle(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 16),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Icon(
-            isDarkMode ? Icons.dark_mode : Icons.dark_mode_outlined,
-            size: 28,
-            color: isDarkMode ? Colors.white : Colors.black,
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Text(
-                'Dark mode',
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ),
-          ),
-          Switch(
-            value: isDarkMode,
-            onChanged: (value) => onDarkModeToggle(),
-            activeColor: Theme.of(context).primaryColor,
-          ),
-        ],
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -291,8 +257,6 @@ class MainContent extends StatelessWidget {
             Navigator.pushNamed(context, '/location');
           },
         ),
-
-        _buildDarkModeToggle(context),
 
         _buildProfileMenuItem(
           context: context,

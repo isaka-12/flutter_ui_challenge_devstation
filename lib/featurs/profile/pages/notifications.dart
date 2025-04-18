@@ -41,7 +41,7 @@ class Notifications extends StatelessWidget {
             right: 0,
             child: Container(
               color: const Color(0xFF6C63FF),
-              padding: const EdgeInsets.fromLTRB(16, 70, 16, 16),
+              padding: const EdgeInsets.fromLTRB(16, 70, 16, 0),
               child: Nav(
                 isStart: false,
                 title: 'Notifications',

@@ -1,16 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:fikratech/core/common/widgets/wavy_appbar.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
-import 'package:fikratech/main.dart';
 import 'package:fikratech/featurs/profile/widgets/nav.dart';
+import 'package:fikratech/main.dart';
 
-class Profile extends StatelessWidget {
+class Profile extends StatefulWidget {
   const Profile({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    bool isDarkMode = themeNotifier.value == ThemeMode.dark;
+  State<Profile> createState() => _ProfileState();
+}
 
+class _ProfileState extends State<Profile> {
+  bool _isDarkMode = themeNotifier.value == ThemeMode.dark;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      setState(() {
+        _isDarkMode = themeNotifier.value == ThemeMode.dark;
+      });
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
@@ -25,7 +40,7 @@ class Profile extends StatelessWidget {
                     Container(
                       margin: const EdgeInsets.only(top: 40, bottom: 24),
                       decoration: BoxDecoration(
-                        color: isDarkMode ? Colors.blueGrey[800] : Colors.white,
+                        color: _isDarkMode ? Colors.black : Colors.white,
                         boxShadow: [
                           BoxShadow(
                             color: Colors.black.withOpacity(0.2),
@@ -90,7 +105,7 @@ class Profile extends StatelessWidget {
             right: 0,
             child: Container(
               color: Color(0xFF6C63FF),
-              padding: const EdgeInsets.fromLTRB(16, 70, 16, 16),
+              padding: const EdgeInsets.fromLTRB(16, 70, 16, 0),
               child: Nav(
                 isStart: false,
                 title: 'My Profile',
@@ -190,16 +205,11 @@ class _ProfileFormState extends State<ProfileForm> {
                 vertical: 15,
               ),
               enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: Theme.of(context).colorScheme.primary,
-                ),
+                borderSide: BorderSide(color: Color(0xFF6C63FF)),
                 borderRadius: BorderRadius.circular(11.75),
               ),
               focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: Theme.of(context).colorScheme.primary,
-                  width: 2.0,
-                ),
+                borderSide: BorderSide(color: Color(0xFF6C63FF), width: 2.0),
                 borderRadius: BorderRadius.circular(11.75),
               ),
               border: OutlineInputBorder(
@@ -290,14 +300,12 @@ class _ProfileFormState extends State<ProfileForm> {
                   ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(11.75),
-                    borderSide: BorderSide(
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
+                    borderSide: BorderSide(color: Color(0xFF6C63FF)),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(11.75),
                     borderSide: BorderSide(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Color(0xFF6C63FF),
                       width: 2.0,
                     ),
                   ),
@@ -329,14 +337,12 @@ class _ProfileFormState extends State<ProfileForm> {
                   ),
                   suffixIcon: const Icon(Icons.calendar_today),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
+                    borderSide: BorderSide(color: Color(0xFF6C63FF)),
                     borderRadius: BorderRadius.circular(11.75),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Color(0xFF6C63FF),
                       width: 2.0,
                     ),
                     borderRadius: BorderRadius.circular(11.75),
@@ -377,14 +383,12 @@ class _ProfileFormState extends State<ProfileForm> {
                   ),
                   hintText: "Select gender",
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
+                    borderSide: BorderSide(color: Color(0xFF6C63FF)),
                     borderRadius: BorderRadius.circular(11.75),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Color(0xFF6C63FF),
                       width: 2.0,
                     ),
                     borderRadius: BorderRadius.circular(11.75),
@@ -407,7 +411,7 @@ class _ProfileFormState extends State<ProfileForm> {
           child: ElevatedButton(
             onPressed: _saveProfile,
             style: ElevatedButton.styleFrom(
-              backgroundColor: Theme.of(context).colorScheme.primary,
+              backgroundColor: Color(0xFF6C63FF),
               foregroundColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(11.75),
