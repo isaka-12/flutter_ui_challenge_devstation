@@ -4,7 +4,7 @@ import 'package:fikratech/featurs/auth/widgets/email_field.dart';
 import 'package:fikratech/featurs/auth/widgets/password_field.dart';
 import 'package:fikratech/featurs/auth/widgets/text_field.dart';
 import 'package:fikratech/featurs/auth/widgets/third_party_button.dart';
-import 'package:fikratech/featurs/profile/pages/settings.dart';
+import 'package:fikratech/featurs/profile/pages/security.dart';
 import 'package:flutter/material.dart';
 import 'package:fikratech/core/common/widgets/wavy_appbar.dart';
 
@@ -78,7 +78,7 @@ class _SignupPageState extends State<SignupPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const Settings(),
+                              builder: (context) => const Security(),
                             ),
                           );
                         }

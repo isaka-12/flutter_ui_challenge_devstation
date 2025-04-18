@@ -8,7 +8,6 @@ import 'package:fikratech/featurs/profile/pages/languages.dart';
 import 'package:fikratech/featurs/profile/pages/notifications.dart';
 import 'package:fikratech/featurs/profile/pages/profile.dart';
 import 'package:fikratech/featurs/profile/pages/security.dart';
-import 'package:fikratech/featurs/profile/pages/settings.dart';
 import 'package:fikratech/featurs/profile/pages/view_profiel.dart';
 import 'package:fikratech/featurs/profile/pages/favourites.dart';
 import 'package:fikratech/featurs/userpanel/home_page.dart';
@@ -51,7 +50,6 @@ class MyApp extends StatelessWidget {
             '/invite-friends': (context) => const InviteFriends(),
             '/notifications': (context) => const Notifications(),
             '/security': (context) => const Security(),
-            '/settings': (context) => const Settings(),
             '/location': (context) => const Locations(),
           },
         );
