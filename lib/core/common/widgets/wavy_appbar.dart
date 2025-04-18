@@ -6,8 +6,8 @@ class WavyAppBar extends StatelessWidget {
 
   const WavyAppBar({
     super.key,
-    this.height = 180.0,
-    this.color = const Color(0xFF6C63FF), // your primary color
+    this.height = 240.0,
+    this.color = const Color(0xFF6C63FF),
   });
 
   @override

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fikratech/core/common/widgets/wavy_appbar.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:fikratech/main.dart';
+import 'package:fikratech/featurs/profile/widgets/nav.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -81,6 +82,25 @@ class Profile extends StatelessWidget {
                   ],
                 ),
               ],
+            ),
+          ),
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              color: Color(0xFF6C63FF),
+              padding: const EdgeInsets.fromLTRB(16, 70, 16, 16),
+              child: Nav(
+                isStart: false,
+                title: 'My Profile',
+                startIcon: Icons.chevron_left,
+                icon: Icons.settings_outlined,
+                onStartIconTap: () {
+                  Navigator.pop(context);
+                },
+                isLast: false,
+              ),
             ),
           ),
         ],
