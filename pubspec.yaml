@@ -41,6 +41,12 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: "^0.13.1"  #Added for icon
+
+flutter_launcher_icons:
+  android: "launcher_icon"  #  icon filename (no extension)
+  ios: true
+  image_path: "assets/images/fikratech.png"  # Path 
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
