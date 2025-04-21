@@ -1,16 +1,38 @@
-# flutter_ui_challenge_devstation
+# 🚀 Flutter UI Challenge - DevStation
 
-A new Flutter project.
+A clean, responsive, and user-friendly **Flutter UI** created during a hackathon challenge. This app showcases core UI screens including **Profile**, **Settings**, and other modern mobile UI components designed with Flutter.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 📱 Features
 
-A few resources to get you started if this is your first Flutter project:
+- 🧑‍💼 **Profile Page** – Displays user information in a sleek, intuitive layout.
+- ⚙️ **Settings Page** – Customize user preferences and configurations.
+- 🎨 Modern UI design principles with smooth animations.
+- 💡 Clean and scalable codebase for easy customization and prototyping.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🎥 Demo Video
+
+[![Watch the demo](assets/demo.gif)]
+<!-- Replace demo-preview.gif with your actual file, and update the video link -->
+
+---
+
+## 🛠️ Getting Started
+
+To run the project locally:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/flutter_ui_challenge_devstation.git
+   cd flutter_ui_challenge_devstation
+
+2. **Install dependencies**
+    ```bash
+    flutter pub get
+
+3. **Run the Application**
+    ```bash
+    flutter run
