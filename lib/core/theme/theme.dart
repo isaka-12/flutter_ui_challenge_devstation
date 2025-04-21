@@ -13,10 +13,10 @@ final ThemeData lightTheme = ThemeData(
 );
 
 final ThemeData darkTheme = ThemeData(
-  brightness: Brightness.light,
-  primaryColor: Color(0xFFFFFFFF),
+  brightness: Brightness.dark,
+  primaryColor: Colors.black12,
   colorScheme: const ColorScheme.dark(
-    primary: Color(0xFFFFFFFF), // Primary action color
+    primary: Colors.black12, // Primary action color
     secondary: Colors.deepOrange, // Accent or highlight
     onPrimary: Colors.white, // Text color on primary
     error: Color(0xFFB00020), // Error color
