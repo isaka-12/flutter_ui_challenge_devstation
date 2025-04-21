@@ -15,7 +15,7 @@ A clean, responsive, and user-friendly **Flutter UI** created during a hackathon
 
 ## 🎥 Demo Video
 
-[![Watch the demo](assets/demo.mp4)]
+[![Watch the demo](assets/demo.gif)](https://drive.google.com/file/d/1SJ0ZBTTBCd2cn_4Y_peIwvMxRFK2yozL/view?usp=sharing)
 <!-- Replace demo-preview.gif with your actual file, and update the video link -->
 
 ---
