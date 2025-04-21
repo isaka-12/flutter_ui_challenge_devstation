@@ -4,17 +4,11 @@ final ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
   primaryColor: const Color(0xFF6C63FF),
   colorScheme: const ColorScheme.light(
-    primary:  Color(0xFF6C63FF),// Primary action color
-    secondary: Color(0xFF2DD4BF),     // Accent or highlight
-    onPrimary: Colors.white,   // Text color on primary
+    primary: Color(0xFFFFFFFF), // Primary action color
+    secondary: Color(0xFFF85F47), // Accent or highlight
+    onPrimary: Colors.grey, // Text color on primary
     error: Color(0xFFB00020), // Error color
-    onError: Colors.white,     // Text color on error
-    
-  ),
-  scaffoldBackgroundColor: Colors.white,
-  appBarTheme: const AppBarTheme(
-    backgroundColor: Colors.blue,
-    foregroundColor: Colors.white,
+    onError: Colors.white, // Text color on error
   ),
 );
 
@@ -22,16 +16,10 @@ final ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
   primaryColor: Colors.grey[900],
   colorScheme: const ColorScheme.dark(
-    primary: Colors.tealAccent,      // Primary action color
-    secondary: Colors.deepOrange,    // Accent or highlight
-    onPrimary: Colors.white,         // Text color on primary
-    error: Color(0xFFB00020),        // Error color
-    onError: Colors.white,           // Text color on error
-    
-  ),
-  scaffoldBackgroundColor: Color(0xFF121212),
-  appBarTheme: const AppBarTheme(
-    backgroundColor: Colors.grey,
-    foregroundColor: Colors.white,
+    primary: Colors.tealAccent, // Primary action color
+    secondary: Colors.deepOrange, // Accent or highlight
+    onPrimary: Colors.white, // Text color on primary
+    error: Color(0xFFB00020), // Error color
+    onError: Colors.white, // Text color on error
   ),
 );

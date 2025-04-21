@@ -1,6 +1,6 @@
 // This is a generated file; do not edit or check into version control.
-FLUTTER_ROOT=C:\Users\maver\flutter
-FLUTTER_APPLICATION_PATH=C:\Users\maver\flutter_projects\flutter_ui_challenge_devstation
+FLUTTER_ROOT=/home/procode/development/flutter
+FLUTTER_APPLICATION_PATH=/home/procode/apps/flutter_ui_challenge_devstation
 COCOAPODS_PARALLEL_CODE_SIGN=true
 FLUTTER_BUILD_DIR=build
 FLUTTER_BUILD_NAME=1.0.0

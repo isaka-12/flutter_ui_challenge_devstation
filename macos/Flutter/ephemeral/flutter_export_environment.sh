@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=C:\Users\maver\flutter"
-export "FLUTTER_APPLICATION_PATH=C:\Users\maver\flutter_projects\flutter_ui_challenge_devstation"
+export "FLUTTER_ROOT=/home/procode/development/flutter"
+export "FLUTTER_APPLICATION_PATH=/home/procode/apps/flutter_ui_challenge_devstation"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_BUILD_DIR=build"
 export "FLUTTER_BUILD_NAME=1.0.0"
