@@ -26,7 +26,7 @@ To run the project locally:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/flutter_ui_challenge_devstation.git
+   git clone https://github.com/isaka-12/flutter_ui_challenge_devstation.git
    cd flutter_ui_challenge_devstation
 
 2. **Install dependencies**
